@@ -1,0 +1,128 @@
+{
+  "kind": "build_request",
+  "title": "Create playful single-page “Propose Day Surprise” with dodging No button and reveal-on-Yes image",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-page React UI that reproduces the provided “Propose Day Surprise” layout: centered heading text “Will you always be mine?”, a two-button row (Yes / No) in a constrained container, and an initially-empty output area below.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "<h1>Will you always be mine?</h1>\n<div class=\"button-container\">\n  <button id=\"yes-btn\">Yes ❤️</button>\n  <button id=\"no-btn\">No, never!</button>\n</div>\n\n<div id=\"output\"></div>"
+        ]
+      },
+      "acceptanceCriteria": [
+        "On initial page load, the heading, two buttons, and an empty output area are visible and centered vertically and horizontally.",
+        "The button row is contained within a centered region approximately equivalent to max-width ~400px and supports button repositioning within that region."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement styling in Tailwind/CSS to match the provided visual design: Comic Sans-like playful typography, warm yellow/orange diagonal gradient background, large heading with subtle shadow, rounded pill buttons with drop shadows, and the output image with rounded corners and glow shadow.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "font-family: 'Comic Sans MS', cursive, sans-serif;\nbackground: linear-gradient(135deg, #fceabb, #f8b500);\n...\nbutton {\n  background-color: #ff4d6d;\n  ...\n  border-radius: 30px;\n  box-shadow: 0 4px 6px #ff3366;\n}\n...\n#propose-image {\n  border-radius: 15px;\n  box-shadow: 0 0 15px 5px #ffa500a6;\n}"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The page uses a warm diagonal gradient background (similar to #fceabb → #f8b500).",
+        "Heading appears large and prominent with a subtle shadow.",
+        "Yes button is pink/red with a shadow; No button is green with its own shadow; both have hover effects (color change + slight scale).",
+        "When the image is shown, it appears responsive (max width ~90% of viewport), rounded, and with a warm glow shadow."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement the interactive behavior for the “No, never!” button: when the cursor enters the button, it moves to a random position within its button container; when clicked, it shows an alert with the exact English text: “Haha! You can't say no! Gotta be mine! 😜”.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "// The no button dodges the cursor\nnoBtn.addEventListener('mouseenter', () => {\n  const container = noBtn.parentElement;\n  const maxX = container.offsetWidth - noBtn.offsetWidth;\n  const maxY = container.offsetHeight - noBtn.offsetHeight;\n\n  const x = Math.random() * maxX;\n  const y = Math.random() * maxY;\n  noBtn.style.position = 'absolute';\n  noBtn.style.left = x + \"px\";\n  noBtn.style.top = y + \"px\";\n});\n\n// On click no, show a fun message\nnoBtn.addEventListener('click', () => {\n  alert(\"Haha! You can't say no! Gotta be mine! 😜\");\n});"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hovering (mouseenter) over the No button causes it to jump to a new random position within the bounds of the button container (not the entire page).",
+        "Clicking the No button triggers a browser alert with the exact message text provided."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement the “Yes ❤️” button behavior: on click, render the success message “Yay! You're mine forever! 💖” and display the image “happy_propose_day.jpg” with alt text “Happy Propose Day” in the output area, then scroll the output area into view with smooth behavior.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "yesBtn.addEventListener('click', () => {\n  output.innerHTML = `\n    <div id=\"message\">Yay! You're mine forever! 💖</div>\n    <img id=\"propose-image\" src=\"happy_propose_day.jpg\" alt=\"Happy Propose Day\" />\n  `;\n  output.scrollIntoView({behavior: \"smooth\"});\n});"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking Yes shows the message text exactly as provided and renders the image below it.",
+        "The image source resolves to a static frontend asset named exactly “happy_propose_day.jpg”.",
+        "After clicking Yes, the page scrolls smoothly so the output area is brought into view."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Apply a coherent, playful visual theme consistently across the page (colors, typography, spacing, shadows) that fits a “Propose Day Surprise” vibe, using warm yellows/oranges/pinks/greens (do not introduce a blue/purple primary palette).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Propose Day Surprise"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Colors and typography feel consistent and intentionally designed across heading, buttons, and output section.",
+        "The primary palette remains warm (yellow/orange/pink/green) and does not shift to a blue/purple-dominant theme."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add the required static image asset(s) to the frontend and reference them directly from the UI (do not fetch images via the backend). Place generated images under frontend/public/assets/generated and ensure the UI uses the correct path.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "<img id=\"propose-image\" src=\"happy_propose_day.jpg\" alt=\"Happy Propose Day\" />"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The image is stored as a static asset under frontend/public/assets/generated.",
+        "The UI references the image via its public URL path and it loads successfully in the browser build."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for any user-facing text.",
+    "Do not edit any files under frontend/src/components/ui or other immutable paths (compose them instead if needed).",
+    "Do not add additional backend services or external databases; this app can be frontend-only unless a backend becomes necessary."
+  ],
+  "nonGoals": [
+    "User accounts or authentication (including Internet Identity).",
+    "Persisting responses or analytics.",
+    "Multi-page routing or complex navigation."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Romantic “Happy Propose Day” illustration/banner with warm festive hearts and a cheerful couple silhouette (happy_propose_day.dim_1200x800.jpg)"
+    ],
+    "edits": []
+  }
+}

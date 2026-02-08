@@ -1,0 +1,125 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Playful single-page Propose Day Surprise (dodging No + reveal-on-Yes image)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create a single-page React UI with centered heading, a constrained two-button row, and an initially-empty output area.",
+      "acceptanceCriteria": [
+        "On initial page load, the heading, two buttons, and an empty output area are visible and centered vertically and horizontally.",
+        "The button row is contained within a centered region approximately equivalent to max-width ~400px and supports button repositioning within that region."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the single-page React view rendering the heading “Will you always be mine?”, a centered button container (max width ~400px, positioned to allow the No button to move within it), and an output area below that starts empty."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global layout styles to ensure the app root can center content both vertically and horizontally (e.g., full-height html/body/#root) while keeping the output area below the button row."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement playful styling (Comic Sans-like typography, warm diagonal gradient, shadows, pill buttons, and glowing rounded output image).",
+      "acceptanceCriteria": [
+        "The page uses a warm diagonal gradient background (similar to #fceabb → #f8b500).",
+        "Heading appears large and prominent with a subtle shadow.",
+        "Yes button is pink/red with a shadow; No button is green with its own shadow; both have hover effects (color change + slight scale).",
+        "When the image is shown, it appears responsive (max width ~90% of viewport), rounded, and with a warm glow shadow."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Implement the warm diagonal gradient background, Comic Sans-like font stack, large heading styling with subtle shadow, pill button styling with distinct red/green colors + shadows and hover transitions, and image styling for rounded corners with warm glow shadow."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme tokens as needed to support the warm palette (yellows/oranges/pinks/greens) and consistent shadows/rounded styles without introducing a blue/purple primary theme."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Make the “No, never!” button dodge the cursor within its container and show an exact alert on click.",
+      "acceptanceCriteria": [
+        "Hovering (mouseenter) over the No button causes it to jump to a new random position within the bounds of the button container (not the entire page).",
+        "Clicking the No button triggers a browser alert with the exact message text provided."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add No button interactions: on mouseenter, compute random x/y constrained to the button container’s bounds and apply absolute positioning within that container; on click, trigger a browser alert with exactly: “Haha! You can't say no! Gotta be mine! 😜”."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "On Yes click, render the exact success message and show the Happy Propose Day image, then smooth-scroll output into view.",
+      "acceptanceCriteria": [
+        "Clicking Yes shows the message text exactly as provided and renders the image below it.",
+        "The image source resolves to a static frontend asset named exactly “happy_propose_day.jpg”.",
+        "After clicking Yes, the page scrolls smoothly so the output area is brought into view."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add Yes button behavior: render “Yay! You're mine forever! 💖” and an image with alt text “Happy Propose Day” into the output area, then smooth-scroll the output area into view via a ref."
+        },
+        {
+          "path": "frontend/public/assets/generated/happy_propose_day.jpg",
+          "operation": "create",
+          "description": "Add the static image asset copy/alias named exactly frontend/public/assets/generated/happy_propose_day.jpg so the UI can reference this exact filename."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Apply a cohesive warm, playful “Propose Day Surprise” theme consistently across typography, colors, spacing, and shadows.",
+      "acceptanceCriteria": [
+        "Colors and typography feel consistent and intentionally designed across heading, buttons, and output section.",
+        "The primary palette remains warm (yellow/orange/pink/green) and does not shift to a blue/purple-dominant theme."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure the layout uses consistent spacing and warm-themed UI elements across heading, buttons, and output area (no blue/purple-dominant styling)."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Unify global typography and theme styling to maintain a warm, playful palette (yellows/oranges/pinks/greens) and consistent shadows/rounding across the page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add required generated static image asset(s) under frontend/public/assets/generated and reference them directly from the UI.",
+      "acceptanceCriteria": [
+        "The image is stored as a static asset under frontend/public/assets/generated.",
+        "The UI references the image via its public URL path and it loads successfully in the browser build."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/happy_propose_day.dim_1200x800.jpg",
+          "operation": "create",
+          "description": "Add the required generated image asset at frontend/public/assets/generated/happy_propose_day.dim_1200x800.jpg."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the UI to reference the static image from the public assets path (served directly by the frontend) and ensure it loads without any backend fetch."
+        }
+      ]
+    }
+  ]
+}

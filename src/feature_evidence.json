@@ -1,0 +1,116 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-single-page-react-ui-that-reproduces-the-provided-propose-day-surprise-layout-centered-heading-text-will-you-always-be-mine-a-two-button-row-yes-no-in-a-constrained-container-and-an-initially-empty-output-area-below",
+      "featureTitle": "Create a single-page React UI that reproduces the provided “Propose Day Surprise” layout: centered heading text “Will you always be mine?”, a two-button row (Yes / No) in a constrained container, and an initially-empty output area below.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-styling-in-tailwind-css-to-match-the-provided-visual-design-comic-sans-like-playful-typography-warm-yellow-orange-diagonal-gradient-background-large-heading-with-subtle-shadow-rounded-pill-buttons-with-drop-shadows-and-the-output-image-with-rounded-corners-and-glow-shadow",
+      "featureTitle": "Implement styling in Tailwind/CSS to match the provided visual design: Comic Sans-like playful typography, warm yellow/orange diagonal gradient background, large heading with subtle shadow, rounded pill buttons with drop shadows, and the output image with rounded corners and glow shadow.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-interactive-behavior-for-the-no-never-button-when-the-cursor-enters-the-button-it-moves-to-a-random-position-within-its-button-container-when-clicked-it-shows-an-alert-with-the-exact-english-text-haha-you-can-t-say-no-gotta-be-mine",
+      "featureTitle": "Implement the interactive behavior for the “No, never!” button: when the cursor enters the button, it moves to a random position within its button container; when clicked, it shows an alert with the exact English text: “Haha! You can't say no! Gotta be mine! 😜”.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-yes-button-behavior-on-click-render-the-success-message-yay-you-re-mine-forever-and-display-the-image-happy-propose-day-jpg-with-alt-text-happy-propose-day-in-the-output-area-then-scroll-the-output-area-into-view-with-smooth-behavior",
+      "featureTitle": "Implement the “Yes ❤️” button behavior: on click, render the success message “Yay! You're mine forever! 💖” and display the image “happy_propose_day.jpg” with alt text “Happy Propose Day” in the output area, then scroll the output area into view with smooth behavior.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-coherent-playful-visual-theme-consistently-across-the-page-colors-typography-spacing-shadows-that-fits-a-propose-day-surprise-vibe-using-warm-yellows-oranges-pinks-greens-do-not-introduce-a-blue-purple-primary-palette",
+      "featureTitle": "Apply a coherent, playful visual theme consistently across the page (colors, typography, spacing, shadows) that fits a “Propose Day Surprise” vibe, using warm yellows/oranges/pinks/greens (do not introduce a blue/purple primary palette).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-the-required-static-image-asset-s-to-the-frontend-and-reference-them-directly-from-the-ui-do-not-fetch-images-via-the-backend-place-generated-images-under-frontend-public-assets-generated-and-ensure-the-ui-uses-the-correct-path",
+      "featureTitle": "Add the required static image asset(s) to the frontend and reference them directly from the UI (do not fetch images via the backend). Place generated images under frontend/public/assets/generated and ensure the UI uses the correct path.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

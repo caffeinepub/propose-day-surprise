@@ -1,0 +1,6 @@
+{
+  "frontend/src/App.tsx": "Main single-page component implementing the playful \"Propose Day Surprise\" with interactive Yes/No buttons, dodging behavior for the No button, and a reveal animation showing a success message and image when Yes is clicked.",
+  "frontend/src/index.css": "Global styles implementing the warm gradient background (yellow/orange), Comic Sans-like playful typography, custom button shadows and hover effects, image glow styling, and smooth animations for the reveal effect.",
+  "frontend/tailwind.config.js": "Extended Tailwind configuration with warm color palette tokens (yellow/orange/pink/green), custom shadows for buttons and images, playful font families (Comic Neue, Bubblegum Sans), and theme utilities matching the Propose Day aesthetic.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as this is a frontend-only application with no backend data operations required."
+}

@@ -1,0 +1,15 @@
+{
+  "backend/main.mo": "Defines an empty Motoko actor with no backend logic.",
+  "feature_evidence.json": "Lists feature evidence mapping UI requirements to frontend files and components with confidence metadata.",
+  "frontend-file-summaries.txt": "Provides high-level descriptions of key frontend files and their roles in the UI and theme.",
+  "frontend/index.css": "Defines base Tailwind variables and theme tokens for light/dark modes with color and layout utilities.",
+  "frontend/index.html": "Basic HTML entry point mounting the React app via main.tsx.",
+  "frontend/src/App.tsx": "Main React component implementing the interactive Yes/No buttons and reveal of the success message and image.",
+  "frontend/src/hooks/useActor.ts": "Hook that creates and manages a backend actor instance tied to the user's Internet Identity state.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Implements Internet Identity authentication context, login, logout, and identity restoration logic.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder hook since no backend queries are needed.",
+  "frontend/src/index.css": "Global styles defining playful typography, warm gradient theme, custom button styles, and layout resets.",
+  "frontend/src/main.tsx": "Bootstraps the React app, wrapping it in Internet Identity and React Query providers.",
+  "frontend/tailwind.config.js": "Tailwind config enabling dark mode, scanning project files, and extending theme colors, shadows, and layout settings using OKLCH variables and custom warm palette.",
+  "project_state.json": "Defines project state metadata describing requirements for a playful Propose Day SPA, including features, styling, interactivity, and image asset needs."
+}

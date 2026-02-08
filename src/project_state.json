@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a playful single-page \"Propose Day Surprise\" web page with Yes/No buttons, where the No button dodges the cursor and the Yes button reveals a message and an image.",
+  "architectural_notes": [
+    "Static HTML/CSS/JS single-page implementation; no frameworks mentioned.",
+    "Requires bundling/providing the image asset \"happy_propose_day.jpg\" at the expected relative path."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Romantic “Happy Propose Day” illustration/banner with warm festive hearts and a cheerful couple silhouette (happy_propose_day.dim_1200x800.jpg)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-react-ui-that-reproduces-the-provided-propose-day-surprise-layout-centered-heading-text-will-you-always-be-mine-a-two-button-row-yes-no-in-a-constrained-container-and-an-initially-empty-output-area-below",
+      "title": "Create a single-page React UI that reproduces the provided “Propose Day Surprise” layout: centered heading text “Will you always be mine?”, a two-button row (Yes / No) in a constrained container, and an initially-empty output area below.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-styling-in-tailwind-css-to-match-the-provided-visual-design-comic-sans-like-playful-typography-warm-yellow-orange-diagonal-gradient-background-large-heading-with-subtle-shadow-rounded-pill-buttons-with-drop-shadows-and-the-output-image-with-rounded-corners-and-glow-shadow",
+      "title": "Implement styling in Tailwind/CSS to match the provided visual design: Comic Sans-like playful typography, warm yellow/orange diagonal gradient background, large heading with subtle shadow, rounded pill buttons with drop shadows, and the output image with rounded corners and glow shadow.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-interactive-behavior-for-the-no-never-button-when-the-cursor-enters-the-button-it-moves-to-a-random-position-within-its-button-container-when-clicked-it-shows-an-alert-with-the-exact-english-text-haha-you-can-t-say-no-gotta-be-mine",
+      "title": "Implement the interactive behavior for the “No, never!” button: when the cursor enters the button, it moves to a random position within its button container; when clicked, it shows an alert with the exact English text: “Haha! You can't say no! Gotta be mine! 😜”.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-yes-button-behavior-on-click-render-the-success-message-yay-you-re-mine-forever-and-display-the-image-happy-propose-day-jpg-with-alt-text-happy-propose-day-in-the-output-area-then-scroll-the-output-area-into-view-with-smooth-behavior",
+      "title": "Implement the “Yes ❤️” button behavior: on click, render the success message “Yay! You're mine forever! 💖” and display the image “happy_propose_day.jpg” with alt text “Happy Propose Day” in the output area, then scroll the output area into view with smooth behavior.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-playful-visual-theme-consistently-across-the-page-colors-typography-spacing-shadows-that-fits-a-propose-day-surprise-vibe-using-warm-yellows-oranges-pinks-greens-do-not-introduce-a-blue-purple-primary-palette",
+      "title": "Apply a coherent, playful visual theme consistently across the page (colors, typography, spacing, shadows) that fits a “Propose Day Surprise” vibe, using warm yellows/oranges/pinks/greens (do not introduce a blue/purple primary palette).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-required-static-image-asset-s-to-the-frontend-and-reference-them-directly-from-the-ui-do-not-fetch-images-via-the-backend-place-generated-images-under-frontend-public-assets-generated-and-ensure-the-ui-uses-the-correct-path",
+      "title": "Add the required static image asset(s) to the frontend and reference them directly from the UI (do not fetch images via the backend). Place generated images under frontend/public/assets/generated and ensure the UI uses the correct path.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a single-page \"Propose Day Surprise\" HTML/CSS layout with centered heading and two buttons (Yes/No) using the specified gradient theme and styling.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement interactive behavior: the No button moves to a random position within its container on mouseenter and shows an alert on click.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Implement Yes button behavior to render a success message and display an image (happy_propose_day.jpg) in the output area, then scroll output into view.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Propose Day Surprise",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
